@@ -8,6 +8,7 @@
 #define RAISE       2
 #define ADDITIONAL  3
 #define TEST        4
+#define ARROWS      5
 
 &sl {
     release-after-ms = <5000>;
@@ -29,7 +30,7 @@
     &kp TAB    &kp Q     &kp W     &kp E        &kp R      &kp T      &kp LEFT_BRACKET        &kp RIGHT_BRACKET   &kp Y        &kp U        &kp I      &kp O     &kp P     &kp BACKSLASH
     &kp CAPS   &kp A     &kp S     &kp D        &kp F      &kp G      &kp BACKSPACE           &kp RPAR            &kp H        &kp J        &kp K      &kp L     &kp SEMI  &kp SQT
     &kp LSHFT  &kp Z     &kp X     &kp C        &kp V      &kp B                                                  &kp N        &kp M        &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-    &kp LCTRL  &kp LCMD  &kp LALT  &tog TEST    &kp LALT   &mo LOWER  &kp TAB                 &kp COLON           &mo RAISE    &out OUT_TOG &kp DOWN   &kp GRAVE &kp LBKT  &kp RBKT
+    &kp LCTRL  &kp LCMD  &kp LALT  &tog TEST    &kp LALT   &mo LOWER  &kp TAB                 &kp COLON           &mo RAISE    &mo ARROWS   &kp DOWN   &kp GRAVE &kp LBKT  &kp RBKT
                                                 &kp LCTRL  &kp SPACE  &kp ESC                 &mo ADDITIONAL      &kp RET      &kp SPACE
             >;
         };
@@ -41,7 +42,7 @@
     &kp CAPS   &kp A     &kp S     &kp D        &kp F     &kp G      &kp H                   &kp RPAR            &kp H        &kp J        &kp K      &kp L     &kp SEMI  &kp SQT
     &kp LSHFT  &kp Z     &kp X     &kp C        &kp V     &kp B                                                  &kp N        &kp M        &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
     &kp LCTRL  &kp LCMD  &kp LALT  &bootloader  &kp SQT   &mo LOWER  &kp COLON               &kp COLON           &mo RAISE    &out OUT_TOG &kp DOWN   &kp GRAVE &kp LBKT  &kp RBKT
-                                                &kp LCTRL &kp SPACE  &kp K_SLEEP             &kp C_SLEEP         &kp RET      &kp SPACE
+                                                &kp LCTRL &kp SPACE  &kp K_SLEEP             &mo ARROWS         &kp RET      &kp SPACE
             >;
         };
 
@@ -74,6 +75,17 @@
     &kp A  &kp A &kp A &kp A &kp A &kp A                      &kp A &kp A &kp A &kp A &kp A  &kp A
     &kp A  &kp A &kp A &kp A &kp A &kp A  &kp A        &kp A  &kp A &kp A &kp A &kp A &kp A  &kp A
                              &kp A &kp A  &kp A        &kp A  &kp A &kp A
+            >;
+        };
+
+        arrow_layer {
+            bindings = <
+    &trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans    &trans    &trans  &trans     &trans  &trans
+    &trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans    &trans    &trans  &trans     &trans  &trans
+    &trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+    &trans  &trans  &trans  &trans  &trans  &trans                            &trans    &trans    &trans  &trans     &trans  &trans        
+    &trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans    &trans    &trans  &trans     &trans  &trans
+                                    &trans  &trans  &trans            &trans  &trans    &trans
             >;
         };
     };

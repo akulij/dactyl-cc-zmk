@@ -3,11 +3,10 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define DEFAULT 0
-#define MAC     1
-#define LOWER   2
-#define RAISE   3
-#define ADJUST  4
+#define DEFAULT     0
+#define LOWER       2
+#define RAISE       3
+#define ADDITIONAL  4
 
 #define HYPER(key) LS(LC(LA(LG(key))))
 #define MEH(key)   LS(LC(LA(key)))
@@ -28,23 +27,12 @@
 
         default_layer {
             bindings = <
-    &kp ESC    &kp N1    &kp N2    &kp N3       &kp N4    &kp N5     &kp N6                  &kp N7              &kp N8       &kp N9       &kp N0     &kp MINUS &kp PLUS  &kp BACKSPACE
-    &kp TAB    &kp Q     &kp W     &kp E        &kp R     &kp T      &kp LEFT_BRACKET        &kp RIGHT_BRACKET   &kp Y        &kp U        &kp I      &kp O     &kp P     &kp BACKSLASH
-    &kp CAPS   &kp A     &kp S     &kp D        &kp F     &kp G      &kp BACKSPACE                   &kp RPAR            &kp H        &kp J        &kp K      &kp L     &kp SEMI  &kp SQT
-    &kp LSHFT  &kp Z     &kp X     &kp C        &kp V     &kp B                                                  &kp N        &kp M        &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-    &kp LCTRL  &kp LCMD  &kp LALT  &bootloader  &kp BACKSPACE   &mo LOWER  &kp TAB               &kp COLON           &mo RAISE    &out OUT_TOG &kp DOWN   &kp GRAVE &kp LBKT  &kp RBKT
-                                                &kp LCTRL &kp SPACE  &kp ESC             &kp C_SLEEP         &kp RET      &kp SPACE
-            >;
-        };
-
-        mac_layer {
-            bindings = <
-    &kp ESC    &kp N1    &kp N2    &kp N3       &kp N4    &kp N5     &kp N6                  &kp N7              &kp N8       &kp N9       &kp N0     &kp MINUS &kp PLUS  &kp DEL
-    &kp TAB    &kp Q     &kp W     &kp E        &kp R     &kp T      &kp LEFT_BRACKET        &kp RIGHT_BRACKET   &kp Y        &kp U        &kp I      &kp O     &kp P     &kp BACKSLASH
-    &kp CAPS   &kp A     &kp S     &kp D        &kp F     &kp G      &kp H                   &kp RPAR            &kp H        &kp J        &kp K      &kp L     &kp SEMI  &kp SQT
-    &kp LSHFT  &kp Z     &kp X     &kp C        &kp V     &kp B                                                  &kp N        &kp M        &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-    &kp LCTRL  &kp LCMD  &kp LALT  &bootloader  &kp SQT   &mo LOWER  &kp COLON               &kp COLON           &mo RAISE    &out OUT_TOG &kp DOWN   &kp GRAVE &kp LBKT  &kp RBKT
-                                                &kp LCTRL &kp SPACE  &kp K_SLEEP             &kp C_SLEEP         &kp RET      &kp SPACE
+    &kp ESC    &kp N1    &kp N2    &kp N3       &kp N4     &kp N5     &kp N6                  &kp N7              &kp N8       &kp N9       &kp N0     &kp MINUS &kp PLUS  &kp BACKSPACE
+    &kp TAB    &kp Q     &kp W     &kp E        &kp R      &kp T      &kp LEFT_BRACKET        &kp RIGHT_BRACKET   &kp Y        &kp U        &kp I      &kp O     &kp P     &kp BACKSLASH
+    &kp CAPS   &kp A     &kp S     &kp D        &kp F      &kp G      &kp BACKSPACE           &kp RPAR            &kp H        &kp J        &kp K      &kp L     &kp SEMI  &kp SQT
+    &kp LSHFT  &kp Z     &kp X     &kp C        &kp V      &kp B                                                  &kp N        &kp M        &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+    &kp LCTRL  &kp LCMD  &kp LALT  &bootloader  &kp LALT   &mo LOWER  &kp TAB                 &kp COLON           &mo RAISE    &out OUT_TOG &kp DOWN   &kp GRAVE &kp LBKT  &kp RBKT
+                                                &kp LCTRL  &kp SPACE  &kp ESC                 &mo ADDITIONAL      &kp RET      &kp SPACE
             >;
         };
 
@@ -53,10 +41,11 @@
     &kp ESC    &kp N1    &kp N2    &kp N3       &kp N4    &kp N5     &kp N6                  &kp N7              &kp N8       &kp N9       &kp N0     &kp MINUS &kp PLUS  &kp DEL
     &kp TAB    &kp Q     &kp W     &kp E        &kp R     &kp T      &kp LEFT_BRACKET        &kp RIGHT_BRACKET   &kp Y        &kp U        &kp I      &kp O     &kp P     &kp BACKSLASH
     &kp CAPS   &kp A     &kp S     &kp D        &kp F     &kp G      &kp H                   &kp RPAR            &kp H        &kp J        &kp K      &kp L     &kp SEMI  &kp SQT
-    &kp LSHFT  &kp Z     &kp X     &kp LC(C)        &kp V     &kp B                                                  &kp N        &kp M        &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+    &kp LSHFT  &kp Z     &kp X     &kp C        &kp V     &kp B                                                  &kp N        &kp M        &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
     &kp LCTRL  &kp LCMD  &kp LALT  &bootloader  &kp SQT   &mo LOWER  &kp COLON               &kp COLON           &mo RAISE    &out OUT_TOG &kp DOWN   &kp GRAVE &kp LBKT  &kp RBKT
                                                 &kp LCTRL &kp SPACE  &kp K_SLEEP             &kp C_SLEEP         &kp RET      &kp SPACE
-            >;       };
+            >;
+        };
 
         raise_layer {
             bindings = <
@@ -69,15 +58,14 @@
             >;
         };
 
-        adjust_layer {
+        additional_layer {
             bindings = <
     &kp ESC    &kp N1    &kp N2    &kp N3       &kp N4    &kp N5     &kp N6                  &kp N7              &kp N8       &kp N9       &kp N0     &kp MINUS &kp PLUS  &kp DEL
     &kp TAB    &kp Q     &kp W     &kp E        &kp R     &kp T      &kp LEFT_BRACKET        &kp RIGHT_BRACKET   &kp Y        &kp U        &kp I      &kp O     &kp P     &kp BACKSLASH
     &kp CAPS   &kp A     &kp S     &kp D        &kp F     &kp G      &kp H                   &kp RPAR            &kp H        &kp J        &kp K      &kp L     &kp SEMI  &kp SQT
-    &kp LSHFT  &kp Z     &kp X     &kp C        &kp V     &kp B                                                  &kp N        &kp M        &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+    &kp LSHFT  &kp Z     &kp X     &kp LC(C)        &kp V     &kp B                                                  &kp N        &kp M        &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
     &kp LCTRL  &kp LCMD  &kp LALT  &bootloader  &kp SQT   &mo LOWER  &kp COLON               &kp COLON           &mo RAISE    &out OUT_TOG &kp DOWN   &kp GRAVE &kp LBKT  &kp RBKT
                                                 &kp LCTRL &kp SPACE  &kp K_SLEEP             &kp C_SLEEP         &kp RET      &kp SPACE
-            >;
-        };
+            >;       };
     };
 };

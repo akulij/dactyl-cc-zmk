@@ -8,6 +8,7 @@
 #define LOWER   2
 #define RAISE   3
 #define ADJUST  4
+#define FNKEYS  5
 
 #define HYPER(key) LS(LC(LA(LG(key))))
 #define MEH(key)   LS(LC(LA(key)))
@@ -32,7 +33,7 @@
     &kp TAB    &kp Q     &kp W     &kp E        &kp R     &kp T      &kp LEFT_BRACKET        &kp RIGHT_BRACKET   &kp Y        &kp U        &kp I      &kp O     &kp P     &kp BACKSLASH
     &kp CAPS   &kp A     &kp S     &kp D        &kp F     &kp G      &kp H                   &kp RPAR            &kp H        &kp J        &kp K      &kp L     &kp SEMI  &kp SQT
     &kp LSHFT  &kp Z     &kp X     &kp C        &kp V     &kp B                                                  &kp N        &kp M        &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-    &kp LCTRL  &kp LCMD  &kp LALT  &bootloader  &kp SQT   &mo LOWER  &kp COLON               &kp COLON           &mo RAISE    &out OUT_TOG &kp DOWN   &kp GRAVE &kp LBKT  &kp RBKT
+    &kp LCTRL  &kp LCMD  &kp LALT  &bootloader  &kp SQT   &mo LOWER  &kp COLON               &mo FNKEYS          &mo RAISE    &out OUT_TOG &kp DOWN   &kp GRAVE &kp LBKT  &kp RBKT
                                                 &kp LCTRL &kp SPACE  &kp K_SLEEP             &kp C_SLEEP         &kp RET      &kp SPACE
             >;
         };
@@ -77,6 +78,17 @@
     &kp LSHFT  &kp Z     &kp X     &kp C        &kp V     &kp B                                                  &kp N        &kp M        &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
     &kp LCTRL  &kp LCMD  &kp LALT  &bootloader  &kp SQT   &mo LOWER  &kp COLON               &kp COLON           &mo RAISE    &out OUT_TOG &kp DOWN   &kp GRAVE &kp LBKT  &kp RBKT
                                                 &kp LCTRL &kp SPACE  &kp K_SLEEP             &kp C_SLEEP         &kp RET      &kp SPACE
+            >;
+        };
+
+        fnkeys_layer {
+            bindings = <
+    &trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6      &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12 &trans
+    &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans  &trans  &trans  &trans
+    &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans  &trans  &trans  &trans
+    &trans &trans &trans &trans &trans &trans                    &trans &trans &trans  &trans  &trans  &trans
+    &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans  &trans  &trans  &trans
+                                &trans &trans &trans      &trans &trans &trans
             >;
         };
     };
